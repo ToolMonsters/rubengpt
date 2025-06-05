@@ -4,7 +4,14 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Thank You - Ruben Hassid</title>
-  <script defer data-domain="rubengpt.com" src="https://plausible.io/js/script.js"></script>
+
+  <!-- 👇 Le script Plausible envoie les données vers le dashboard de checkoutpage.com -->
+  <script
+    defer
+    data-domain="ruben-hassid.checkoutpage.com"
+    src="https://plausible.io/js/script.js"
+  ></script>
+
   <style>
     :root {
       --accent: #ec4899;
@@ -144,14 +151,13 @@
     </div>
   </div>
 
+  <!-- 👇 Script qui envoie les événements "purchase" et "purchase_<utm_source>" -->
   <script>
     window.addEventListener('load', () => {
       const utm = new URLSearchParams(window.location.search).get('utm_source') || 'unknown';
       if (typeof plausible === 'function') {
         plausible('purchase', { props: { source: utm } });
         plausible('purchase_' + utm, { props: { source: utm } });
-      } else {
-        console.log('Plausible not loaded. Cannot track purchase.');
       }
     });
   </script>
