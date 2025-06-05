@@ -145,11 +145,13 @@
   </div>
 
   <script>
-    window.addEventListener('DOMContentLoaded', () => {
+    window.addEventListener('load', () => {
       const utm = new URLSearchParams(window.location.search).get('utm_source') || 'unknown';
       if (typeof plausible === 'function') {
         plausible('purchase', { props: { source: utm } });
         plausible('purchase_' + utm, { props: { source: utm } });
+      } else {
+        console.log('Plausible not loaded. Cannot track purchase.');
       }
     });
   </script>
