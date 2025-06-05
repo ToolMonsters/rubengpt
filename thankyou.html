@@ -159,27 +159,20 @@
 
     if (typeof plausible === 'function') {
       plausible('purchase', {
-        props: {
-          source: utm
-        },
-        revenue: {
-          currency: 'USD',
-          amount: 1.00
-        }
+        props: { source: utm },
+        revenue: { currency: 'USD', amount: 1.00 }
       });
 
-      plausible('purchase_' + utm, {
-        props: {
-          source: utm
-        },
-        revenue: {
-          currency: 'USD',
-          amount: 1.00
-        }
-      });
+      setTimeout(() => {
+        plausible('purchase_' + utm, {
+          props: { source: utm },
+          revenue: { currency: 'USD', amount: 1.00 }
+        });
+      }, 500); // délai de 500ms pour garantir la prise en compte
     }
   });
 </script>
+
 
 
 
