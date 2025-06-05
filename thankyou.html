@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Thank You - Ruben Hassid</title>
+  <script defer data-domain="rubengpt.com" src="https://plausible.io/js/script.js"></script>
+  <style>
+    :root {
+      --accent: #ec4899;
+      --text: #111;
+      --muted: #666;
+      --bg: #fff;
+      --font: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    body {
+      margin: 0;
+      padding: 2rem;
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--text);
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      max-width: 960px;
+      gap: 2rem;
+      width: 100%;
+    }
+
+    .left, .right {
+      padding: 2rem;
+    }
+
+    .left img {
+      width: 36px;
+      border-radius: 50%;
+      vertical-align: middle;
+    }
+
+    .left h1 {
+      font-size: 1.3rem;
+      margin: 1rem 0 0.5rem;
+    }
+
+    .left p, .right p {
+      line-height: 1.6;
+      margin: 0 0 1rem;
+    }
+
+    .left ul {
+      list-style: none;
+      padding: 0;
+      margin: 1rem 0;
+    }
+
+    .left ul li {
+      margin-bottom: 0.5rem;
+    }
+
+    .left ul li::before {
+      content: "☑️ ";
+    }
+
+    .left strong {
+      font-weight: 700;
+    }
+
+    .left em {
+      font-style: italic;
+    }
+
+    .right {
+      text-align: center;
+    }
+
+    .check-icon {
+      width: 48px;
+      height: 48px;
+      margin: 0 auto 1rem;
+      color: var(--accent);
+    }
+
+    .right h2 {
+      font-size: 1.2rem;
+      font-weight: bold;
+      margin-bottom: 1rem;
+    }
+
+    .humor {
+      font-style: italic;
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin-top: 2rem;
+    }
+
+    a {
+      color: var(--text);
+      font-weight: bold;
+    }
+
+    @media (max-width: 768px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+      .left, .right {
+        padding: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="grid">
+    <div class="left">
+      <img src="https://avatars.githubusercontent.com/u/50009906" alt="Ruben Hassid" />
+      <h1>Master AI in 27 min • $1 Kit</h1>
+      <p>Yes, really. Pay <strong>$1</strong>, <strong>own it for life</strong>.</p>
+      <ul>
+        <li>8 videos • done in <strong>27 min</strong>. See every click.</li>
+        <li>122 copy & paste prompts, that actually work.</li>
+        <li>Instant access to “How to AI” with <strong>58k+ peers</strong>.</li>
+        <li>By Ruben Hassid (<strong>200M+ views</strong> on LinkedIn).</li>
+      </ul>
+      <p><strong>Get my AI Kit for $1.</strong> One-time fee.</p>
+      <p><em>7-day guarantee • or I fully refund your $1.</em></p>
+    </div>
+
+    <div class="right">
+      <svg class="check-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+      </svg>
+      <h2>Payment confirmed!</h2>
+      <p>You will receive a confirmation email in the next 5 minutes (it's usually more like 20 seconds).</p>
+      <p>Please be patient.</p>
+      <p>If you need support, contact <a href="mailto:howtoai@rubenhassid.ai">howtoai@rubenhassid.ai</a>.</p>
+      <p>But only if you actually waited 5 minutes.</p>
+      <p class="humor">Otherwise, I'll send my private AI robots to take revenge.</p>
+      <p class="humor">Humanly yours, Ruben.</p>
+    </div>
+  </div>
+
+  <script>
+    const utm = new URLSearchParams(window.location.search).get('utm_source');
+    plausible('purchase', {
+      props: { source: utm || 'unknown' }
+    });
+  </script>
+</body>
+</html>
