@@ -152,14 +152,29 @@
   </div>
 
   <!-- 👇 Script qui envoie les événements "purchase" et "purchase_<utm_source>" -->
+  <!-- 👇 Script qui envoie les événements "purchase" et "purchase_<utm_source>" avec revenue -->
   <script>
     window.addEventListener('load', () => {
       const utm = new URLSearchParams(window.location.search).get('utm_source') || 'unknown';
+      const revenue = 1; // Valeur fixe de la conversion en $
+  
       if (typeof plausible === 'function') {
-        plausible('purchase', { props: { source: utm } });
-        plausible('purchase_' + utm, { props: { source: utm } });
+        plausible('purchase', {
+          props: {
+            source: utm,
+            revenue: revenue
+          }
+        });
+  
+        plausible('purchase_' + utm, {
+          props: {
+            source: utm,
+            revenue: revenue
+          }
+        });
       }
     });
   </script>
+
 </body>
 </html>
