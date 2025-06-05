@@ -145,12 +145,12 @@
   </div>
 
   <script>
-    const utm = new URLSearchParams(window.location.search).get('utm_source') || 'unknown';
-    plausible('purchase', {
-      props: { source: utm }
-    });
-    plausible('purchase_' + utm, {
-      props: { source: utm }
+    window.addEventListener('DOMContentLoaded', () => {
+      const utm = new URLSearchParams(window.location.search).get('utm_source') || 'unknown';
+      if (typeof plausible === 'function') {
+        plausible('purchase', { props: { source: utm } });
+        plausible('purchase_' + utm, { props: { source: utm } });
+      }
     });
   </script>
 </body>
